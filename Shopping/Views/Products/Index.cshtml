@@ -1,0 +1,46 @@
+﻿@{
+    var products = (List<ProductModel>)ViewData["products"];
+    var color = (string)ViewData["color"];
+}
+<h5>Products</h5>
+@*<div class="card-deck">
+    @foreach (var p in products)
+    {
+        <div class="card text-center">
+            <img src="@p.Image" />
+            <h6>@p.Name</h6>
+            <p>@p.Price</p>
+            <div class="card-footer">
+                <a href="/products/details/@p.Id"><button>Show</button></a>
+            </div>
+        </div>
+    }
+</div>*@
+
+<div class="row justify-content-center">
+    <div class="col-auto">
+        <table class="table table-responsive">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+            </tr>
+            @foreach (var p in products)
+            {
+                <tr style="background-color:@color">
+                    <th scope="row">@p.Id</th>
+                    <td>@p.Name</td>
+                    <td>@p.Price</td>
+                    <td><img style="width: 30%; height: auto;" src="@p.Image" /></td>
+                    <td>
+                        <a href="/products/details/@p.Id">
+                        <button class="btn btn-light">Show</button>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>
+</div>

@@ -1,0 +1,10 @@
+﻿@{
+    var p = (ProductModel)ViewData["foundProduct"];
+}
+<div class="card-deck">
+        <div class="card text-center">
+            <img src="@p.Image" />
+            <h6>@p.Name</h6>
+            <p>@p.Price</p>
+        </div>
+</div>
